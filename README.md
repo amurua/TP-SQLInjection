@@ -29,8 +29,7 @@ Este repositorio contiene un entorno mínimo para demostrar una consulta vulnera
 3. **Ejecutar el script SQL de inicialización** (solo la primera vez o cuando se quiera recrear la BD):
 
    ```bash
-   docker compose exec sqlserver /opt/mssql-tools/bin/sqlcmd \
-     -S localhost -U sa -P "YourStrong!Passw0rd" -i /sql/init.sql
+   MSYS_NO_PATHCONV=1 docker compose exec sqlserver sqlcmd -S localhost -U sa -P 'YourStrong!Passw0rd' -i /sql/init.sql
    ```
 
 4. **Instalar dependencias de Python** (en tu máquina host o en un entorno virtual):
