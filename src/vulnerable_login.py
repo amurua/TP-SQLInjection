@@ -2,16 +2,12 @@
 
 import pymssql
 
-SERVER = "localhost"
-PORT = 1433
-USER = "sa"
-PASSWORD = "YourStrong!Passw0rd"
-DATABASE = "DemoInjection"
+from config import DB_CONFIG
 
 
 def insecure_login(username: str, password: str) -> bool:
     """Realiza una consulta insegura concatenando la entrada del usuario."""
-    with pymssql.connect(server=SERVER, port=PORT, user=USER, password=PASSWORD, database=DATABASE) as connection:
+    with pymssql.connect(**DB_CONFIG) as connection:
         with connection.cursor(as_dict=True) as cursor:
             query = (
                 "SELECT Id, Username, FullName "
