@@ -6,11 +6,12 @@ Este repositorio contiene un entorno mínimo para demostrar una consulta vulnera
 
 | Archivo | Descripción |
 |---------|-------------|
-| [`docker-compose.yml`](docker-compose.yml) | Orquesta el contenedor de SQL Server y expone el puerto `1433`.
-| [`sql/init.sql`](sql/init.sql) | Script que crea la base de datos `DemoInjection`, su tabla `Users` y datos de prueba.
-| [`src/vulnerable_login.py`](src/vulnerable_login.py) | Script en Python que concatena la entrada del usuario y permite la inyección SQL.
-| [`src/secure_login.py`](src/secure_login.py) | Variante corregida que utiliza sentencias preparadas con parámetros.
-| [`requirements.txt`](requirements.txt) | Dependencias de Python necesarias para ejecutar los ejemplos.
+| [`docker-compose.yml`](docker-compose.yml) | Orquesta el contenedor de SQL Server y expone el puerto `1433`. |
+| [`sql/init.sql`](sql/init.sql) | Script que crea la base de datos `DemoInjection`, su tabla `Users` y datos de prueba. |
+| [`src/config.py`](src/config.py) | Configuración compartida para conectarse a la base de datos desde los ejemplos. |
+| [`src/vulnerable_login.py`](src/vulnerable_login.py) | Script en Python que concatena la entrada del usuario y permite la inyección SQL. |
+| [`src/secure_login.py`](src/secure_login.py) | Variante corregida que utiliza sentencias preparadas con parámetros. |
+| [`requirements.txt`](requirements.txt) | Dependencias de Python necesarias para ejecutar los ejemplos. |
 
 ## Preparación del entorno
 
